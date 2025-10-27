@@ -5,6 +5,7 @@ body {
   padding: 0;
   background-color: #f5f7fa;
   color: #222;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -12,19 +13,21 @@ header {
   background-color: #1e3a8a;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 #course-title {
   display: block;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
+/* Navigation */
 nav {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -54,6 +57,7 @@ main {
 h1 {
   text-align: center;
   color: #1e3a8a;
+  font-size: 2rem;
 }
 
 /* Card Styles */
@@ -68,8 +72,9 @@ h1 {
 
 .card img {
   width: 100%;
-  border-radius: 0.75rem;
   height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
 }
 
 /* Footer */
@@ -79,4 +84,12 @@ footer {
   color: white;
   padding: 1rem;
   font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+footer a {
+  color: #3b82f6;
+  text-decoration: none;
 }
