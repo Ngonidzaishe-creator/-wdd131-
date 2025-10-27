@@ -62,3 +62,143 @@
     text-align: center;
   }
 }
+/* ===== BASE STYLES ===== */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fb;
+  color: #222;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #002b5b;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+#course-title {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #facc15;
+  margin-bottom: 1rem;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #1e3a8a;
+  padding: 0.8rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #3b82f6;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+}
+
+/* ===== MAIN ===== */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #002b5b;
+}
+
+/* ===== CARD COMPONENT ===== */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.card h2 {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.about-content img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.country-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.country-info img {
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ===== RESOURCES ===== */
+.resources ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resources li {
+  margin: 0.5rem 0;
+}
+
+.resources a {
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+.resources a:hover {
+  color: #facc15;
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #002b5b;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+#lastModified {
+  color: #facc15;
+}
