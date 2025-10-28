@@ -1,120 +1,69 @@
-/* ===== ABOUT SECTION ===== */
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.about-content .photo {
-  flex: 1 1 250px;/* ===== ABOUT SECTION ===== */
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.about-content .photo {
-  flex: 1 1 250px;
-  text-align: center;
-}
-
-.about-content .photo img {
-  width: 100%;
-  max-width: 220px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.about-content .text {
-  flex: 2 1 500px;
-}
-
-/* Make it stack on smaller screens */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-
-  text-align: center;
-}
-
-.about-content .photo img {
-  width: 100%;
-  max-width: 220px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.about-content .text {
-  flex: 2 1 500px;
-}
-
-/* Make it stack on smaller screens */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
 /* ===== BASE STYLES ===== */
+:root {
+  --primary: #1e3a8a;
+  --accent: #facc15;
+  --dark: #002b5b;
+  --bg: #f4f7fb;
+  --card-radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f7fb;
+  background-color: var(--bg);
   color: #222;
+  line-height: 1.5;
 }
 
 /* ===== HEADER ===== */
 header {
-  background-color: #002b5b;
+  background-color: var(--dark);
   color: white;
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1.25rem 1rem;
 }
 
 #course-title {
   display: block;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #facc15;
-  margin-bottom: 1rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
 }
 
 /* ===== NAVIGATION ===== */
 nav {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  background-color: #1e3a8a;
-  padding: 0.8rem;
+  gap: 1rem;
+  background-color: var(--primary);
+  padding: 0.5rem;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  transition: transform 0.18s ease, background-color 0.18s ease;
 }
 
+/* hover effect — subtle, non-layout-shifting (no >3px shift) */
 nav a:hover {
-  background-color: #3b82f6;
-  padding: 0.3rem 0.8rem;
-  border-radius: 8px;
+  transform: translateY(-2px);
+  background-color: rgba(255,255,255,0.08);
 }
 
 /* ===== MAIN ===== */
 main {
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 1.75rem auto;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr; /* uses CSS Grid as required */
   gap: 2rem;
   padding: 0 1rem;
 }
@@ -122,47 +71,62 @@ main {
 h1 {
   grid-column: 1 / -1;
   text-align: center;
-  color: #002b5b;
+  color: var(--dark);
+  margin: 0 0 1rem 0;
 }
 
 /* ===== CARD COMPONENT ===== */
 .card {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
 }
 
 .card h2 {
-  background-color: #1e3a8a;
+  background-color: var(--primary);
   color: white;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.4rem;
   border-radius: 6px;
+  margin-top: 0;
 }
 
 /* ===== ABOUT SECTION ===== */
 .about-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: flex-start;
 }
 
-.about-content img {
-  width: 200px;
-  border-radius: 8px;
+.about-content .photo {
+  flex: 1 1 220px;
+  text-align: center;
 }
 
+.about-content .photo img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.about-content .text {
+  flex: 2 1 420px;
+}
+
+/* country info */
 .country-info {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin: 0.5rem 0;
 }
 
 .country-info img {
   width: 100px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
 
@@ -170,35 +134,44 @@ h1 {
 .resources ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .resources li {
-  margin: 0.5rem 0;
+  margin: 0.45rem 0;
 }
 
 .resources a {
-  color: #1e3a8a;
+  color: var(--primary);
   text-decoration: none;
 }
 
 .resources a:hover {
-  color: #facc15;
+  color: var(--accent);
   text-decoration: underline;
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background-color: #002b5b;
+  background-color: var(--dark);
   color: white;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
 }
 
-footer p {
-  margin: 0.3rem 0;
+footer p { margin: 0.25rem 0; }
+
+#lastModified { color: var(--accent); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
 }
 
-#lastModified {
-  color: #facc15;
+@media (max-width: 480px) {
+  nav { gap: .5rem; padding: .4rem; }
+  #course-title { font-size: 1.05rem; }
 }
