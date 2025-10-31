@@ -2,121 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Temple Album — Ngonidzaishe Chareka</title>
 
-  <!-- Google Fonts (choose 1-2 fonts) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Mobile-first CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/temples.css">
-
-  <!-- Larger view CSS (only applied for wider screens) -->
   <link rel="stylesheet" href="styles/temples-large.css" media="screen and (min-width: 800px)">
 
-  <!-- Deferred JS -->
+  <!-- JS -->
   <script defer src="scripts/temples.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <h2 class="brand">Temple Album</h2>
+      <h1 class="brand">Temple Album</h1>
 
-      <!-- Hamburger button (visible in mobile via CSS) -->
+      <!-- Hamburger Menu -->
       <button id="hamburger" class="hamburger" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation">
         ☰
       </button>
 
       <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="#old">Old</a></li>
-          <li><a href="#new">New</a></li>
-          <li><a href="#large">Large</a></li>
-          <li><a href="#small">Small</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Old</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Large</a></li>
+          <li><a href="#">Small</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="site-main">
-    <h1>My Temple Album</h1>
+    <h2>Home</h2>
 
-    <section class="album">
-      <!-- Nine figure elements. Replace src with your images in images/ folder -->
+    <section class="temple-grid">
       <figure>
-        <img src="images/temple1.jpg" alt="Temple 1" loading="lazy">
-        <figcaption>Temple Name 1</figcaption>
+        <img src="images/temple1.jpg" alt="Payson Utah Temple">
+        <figcaption>"Payson Utah </figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple2.jpg" alt="Temple 2" loading="lazy">
-        <figcaption>Temple Name 2</figcaption>
+        <img src="images/temple2.jpg" alt="Orem Utah Temple">
+        <figcaption>Orem Utah</figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple3.jpg" alt="Temple 3" loading="lazy">
-        <figcaption>Temple Name 3</figcaption>
+        <img src="images/temple3.jpg" alt="Lehi Utah Temple">
+        <figcaption>Lehi Utah </figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple4.jpg" alt="Temple 4" loading="lazy">
-        <figcaption>Temple Name 4</figcaption>
+        <img src="images/temple4.jpg" alt="Lindon Utah Temple">
+        <figcaption>San Diego California</figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple5.jpg" alt="Temple 5" loading="lazy">
-        <figcaption>Temple Name 5</figcaption>
+        <img src="images/temple5.jpg" alt="Provo Utah Temple">
+        <figcaption>Provo Utah</figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple6.jpg" alt="Temple 6" loading="lazy">
-        <figcaption>Temple Name 6</figcaption>
+        <img src="images/temple6.jpg" alt="Utah Temple">
+        <figcaption>Utah</figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple7.jpg" alt="Temple 7" loading="lazy">
-        <figcaption>Temple Name 7</figcaption>
+        <img src="images/temple7.jpg" alt="San Diego California Temple">
+        <figcaption>San Diego California</figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple8.jpg" alt="Temple 8" loading="lazy">
-        <figcaption>Temple Name 8</figcaption>
+        <img src="images/temple8.jpg" alt="Zimbabwe Harare Temple">
+        <figcaption>Zimbabwe Harare</figcaption>
       </figure>
-
       <figure>
-        <img src="images/temple9.jpg" alt="Temple 9" loading="lazy">
-        <figcaption>Temple Name 9</figcaption>
+        <img src="images/temple9.jpg" alt="Zimbabwe Harare Temple">
+        <figcaption>Zimbabwe Harare</figcaption>
       </figure>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <p id="site-info">
-        <!-- Example static info; change to match your home page footer -->
-        Ngonidzaishe Godfrey Chareka — WDD131
-      </p>
-
-      <p id="copyright">
-        &copy; <span id="year"></span> — Last modified:
-        <time id="lastModified" datetime=""></time>
-      </p>
-    </div>
+    <p>
+      &copy;<span id="year"></span>
+      <span class="flower">😎🕴️</span>
+      Ngonidzaishe Godfrey Chareka
+      <span class="flower">😎🕴️</span>
+      Zimbabwe
+    </p>
+    <p>
+      Last Modification: <span id="lastModified"></span>
+    </p>
   </footer>
 </body>
 </html>
-<footer class="site-footer">
-  <p>
-    &copy;<span id="year"></span> 
-    <span class="flower">😎🕴️</span> 
-    Ngonidzaishe Godfrey Chareka 
-    <span class="flower">😎🕴️</span> 
-    Zimbabwe
-  </p>
-  <p>
-    Last Modification: <span id="lastModified"></span>
-  </p>
-</footer>
