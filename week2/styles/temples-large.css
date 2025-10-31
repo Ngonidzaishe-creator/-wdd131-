@@ -1,0 +1,72 @@
+/* Larger view overrides — keep minimal; mobile-first design preserved */
+
+@media (min-width: 800px){
+  .header-inner{
+    gap:1rem;
+  }
+
+  /* Hide hamburger on larger screens */
+  .hamburger{ display:none; }
+
+  /* Make nav a horizontal bar */
+  .primary-nav{
+    position:static;
+    display:block !important;
+    background:transparent;
+    box-shadow:none;
+    padding:0;
+    margin-left:auto;
+  }
+
+  .primary-nav ul{
+    flex-direction:row;
+    gap: .5rem;
+    align-items:center;
+  }
+
+  .primary-nav a{
+    padding:.35rem .75rem;
+    border-radius:6px;
+    color:var(--text);
+    font-weight:600;
+  }
+
+  .primary-nav a:hover{
+    background: rgba(31,111,235,0.08);
+    color:var(--accent);
+  }
+
+  /* Main column narrower and centered with spacing */
+  .site-main{
+    padding:0;
+    margin-top:1.25rem;
+  }
+
+  /* Grid: multi-column responsive layout using auto-fit and minmax */
+  .album{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:1rem;
+  }
+
+  figure{
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  figure:hover{
+    transform: translateY(-6px);
+    box-shadow:0 10px 30px rgba(16,24,40,0.08);
+  }
+
+  figcaption{
+    padding:.75rem;
+    font-size:0.95rem;
+    color:var(--muted);
+  }
+
+  .footer-inner{
+    flex-direction:row;
+    justify-content:space-between;
+    text-align:left;
+    gap:1rem;
+  }
+}
