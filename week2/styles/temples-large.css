@@ -1,0 +1,294 @@
+/* Larger view overrides — keep minimal; mobile-first design preserved */
+
+@media (min-width: 800px){
+  .header-inner{
+    gap:1rem;
+  }
+
+  /* Hide hamburger on larger screens */
+  .hamburger{ display:none; }
+
+  /* Make nav a horizontal bar */
+  .primary-nav{
+    position:static;
+    display:block !important;
+    background:transparent;
+    box-shadow:none;
+    padding:0;
+    margin-left:auto;
+  }
+
+  .primary-nav ul{
+    flex-direction:row;
+    gap: .5rem;
+    align-items:center;
+  }
+
+  .primary-nav a{
+    padding:.35rem .75rem;
+    border-radius:6px;
+    color:var(--text);
+    font-weight:600;
+  }
+
+  .primary-nav a:hover{
+    background: rgba(31,111,235,0.08);
+    color:var(--accent);
+  }
+
+  /* Main column narrower and centered with spacing */
+  .site-main{
+    padding:0;
+    margin-top:1.25rem;
+  }
+
+  /* Grid: multi-column responsive layout using auto-fit and minmax */
+  .album{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:1rem;
+  }
+
+  figure{
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  figure:hover{
+    transform: translateY(-6px);
+    box-shadow:0 10px 30px rgba(16,24,40,0.08);
+  }
+
+  figcaption{
+    padding:.75rem;
+    font-size:0.95rem;
+    color:var(--muted);
+  }
+
+  .footer-inner{
+    flex-direction:row;
+    justify-content:space-between;
+    text-align:left;
+    gap:1rem;
+  }
+}
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #4b0082;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Temple Grid Layout */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.temple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.temple-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.temple-grid img:hover {
+  transform: scale(1.05);
+}
+
+.temple-grid p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: #4b0082;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Menu (for small screens) */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    background-color: #4b0082;
+    padding: 1rem 0;
+  }
+
+  header {
+    flex-direction: column;
+  }
+}
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography & Layout */
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Header */
+.site-header {
+  background-color: #4b0082;
+  color: #fff;
+  padding: 1rem;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Navigation */
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.primary-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.primary-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Grid Layout */
+.site-main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.temple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.temple-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.temple-grid img:hover {
+  transform: scale(1.05);
+}
+
+.temple-grid figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #4b0082;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile nav */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+  }
+
+  .primary-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #4b0082;
+    padding: 1rem 0;
+  }
+
+  .primary-nav.open {
+    display: flex;
+  }
+
+  .primary-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
