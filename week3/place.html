@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Place — Madagascar (example)</title>
+
+  <!-- Link the stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Defer JavaScript -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1 class="site-title">Madagascar</h1>
+      <p class="site-sub">Island of lemurs, baobabs & beaches</p>
+    </div>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#">Home</a>
+      <a href="#">Places</a>
+      <a href="#">Travel</a>
+    </nav>
+  </header>
+
+  <!-- HERO with responsive srcset using <picture> + WebP -->
+  <main>
+    <section class="hero">
+      <picture>
+        <!-- mobile -->
+        <source media="(max-width: 600px)" srcset="img/hero-small.webp" type="image/webp">
+        <!-- wider -->
+        <source media="(min-width: 601px)" srcset="img/hero-large.webp" type="image/webp">
+        <!-- fallback -->
+        <img src="img/hero-large.webp" alt="Madagascar coast and baobab trees" class="hero-img">
+      </picture>
+      <div class="hero-caption">
+        <h2>Discover the Red Island</h2>
+        <p>Beaches, rainforests and unique wildlife.</p>
+      </div>
+    </section>
+
+    <!-- two-column layout on wide screens -->
+    <section class="content-grid">
+      <article class="overview card">
+        <h3>Overview</h3>
+        <p>
+          Madagascar is the world's fourth-largest island, known for unique flora and fauna...
+        </p>
+      </article>
+
+      <aside class="weather card">
+        <!-- Mobile: inline svg shown visually before the heading;
+             Large view: pseudo-element will add emoticon after heading -->
+        <div class="weather-icon-mobile" aria-hidden="true">
+          <!-- Simple SVG for mobile view (keeps it scalable). You can replace with downloaded SVG if you prefer. -->
+          <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 15a4 4 0 0 1 4-4h1a5 5 0 1 1 9.9 1H14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h3 class="weather-heading">Weather</h3>
+
+        <dl class="weather-stats">
+          <div>
+            <dt>Temperature</dt>
+            <dd id="temp">8 &deg;C</dd>
+          </div>
+          <div>
+            <dt>Wind Speed</dt>
+            <dd id="wind">20 km/h</dd>
+          </div>
+          <div>
+            <dt>Wind Chill</dt>
+            <dd id="wind-chill">--</dd>
+          </div>
+          <div>
+            <dt>Condition</dt>
+            <dd>Partly cloudy</dd>
+          </div>
+        </dl>
+      </aside>
+
+      <article class="facts card">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li>Capital: Antananarivo</li>
+          <li>Language: Malagasy & French</li>
+          <li>Currency: Ariary (MGA)</li>
+        </ul>
+      </article>
+
+      <article class="gallery card">
+        <h3>Gallery</h3>
+        <p>Images below would show local sights (placeholder thumbnails):</p>
+        <div class="thumbs">
+          <img src="img/thumb1.webp" alt="Thumbnail 1">
+          <img src="img/thumb2.webp" alt="Thumbnail 2">
+          <img src="img/thumb3.webp" alt="Thumbnail 3">
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> — Place page example.</p>
+    <p>Last modified: <span id="last-modified"></span></p>
+  </footer>
+</body>
+</html>
