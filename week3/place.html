@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Place — Madagascar (example)</title>
+  <meta name="description" content="Discover Madagascar — the Red Island with unique wildlife, beaches, and culture.">
+  <title>Madagascar — The Red Island</title>
 
-  <!-- Link the stylesheet -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Defer JavaScript -->
+  <!-- JavaScript -->
   <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -24,38 +25,34 @@
     </nav>
   </header>
 
-  <!-- HERO with responsive srcset using <picture> + WebP -->
   <main>
+    <!-- HERO with responsive WebP srcset -->
     <section class="hero">
       <picture>
-        <!-- mobile -->
         <source media="(max-width: 600px)" srcset="img/hero-small.webp" type="image/webp">
-        <!-- wider -->
         <source media="(min-width: 601px)" srcset="img/hero-large.webp" type="image/webp">
-        <!-- fallback -->
-        <img src="img/hero-large.webp" alt="Madagascar coast and baobab trees" class="hero-img">
+        <img src="img/hero-large.webp" alt="Baobab trees along Madagascar coast" class="hero-img">
       </picture>
       <div class="hero-caption">
         <h2>Discover the Red Island</h2>
-        <p>Beaches, rainforests and unique wildlife.</p>
+        <p>Beaches, rainforests, and unique wildlife await you.</p>
       </div>
     </section>
 
-    <!-- two-column layout on wide screens -->
+    <!-- CONTENT GRID -->
     <section class="content-grid">
       <article class="overview card">
         <h3>Overview</h3>
         <p>
-          Madagascar is the world's fourth-largest island, known for unique flora and fauna...
+          Madagascar is the world's fourth-largest island, known for unique flora and fauna found nowhere else on Earth.
+          With stunning beaches, lush rainforests, and warm people, it’s a destination full of adventure and discovery.
         </p>
       </article>
 
       <aside class="weather card">
-        <!-- Mobile: inline svg shown visually before the heading;
-             Large view: pseudo-element will add emoticon after heading -->
+        <!-- Mobile: SVG icon -->
         <div class="weather-icon-mobile" aria-hidden="true">
-          <!-- Simple SVG for mobile view (keeps it scalable). You can replace with downloaded SVG if you prefer. -->
-          <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 15a4 4 0 0 1 4-4h1a5 5 0 1 1 9.9 1H14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
@@ -65,7 +62,7 @@
         <dl class="weather-stats">
           <div>
             <dt>Temperature</dt>
-            <dd id="temp">8 &deg;C</dd>
+            <dd id="temp">8 °C</dd>
           </div>
           <div>
             <dt>Wind Speed</dt>
@@ -85,26 +82,26 @@
       <article class="facts card">
         <h3>Quick Facts</h3>
         <ul>
-          <li>Capital: Antananarivo</li>
-          <li>Language: Malagasy & French</li>
-          <li>Currency: Ariary (MGA)</li>
+          <li><strong>Capital:</strong> Antananarivo</li>
+          <li><strong>Language:</strong> Malagasy & French</li>
+          <li><strong>Currency:</strong> Ariary (MGA)</li>
         </ul>
       </article>
 
       <article class="gallery card">
         <h3>Gallery</h3>
-        <p>Images below would show local sights (placeholder thumbnails):</p>
+        <p>Local sights and experiences:</p>
         <div class="thumbs">
-          <img src="img/thumb1.webp" alt="Thumbnail 1">
-          <img src="img/thumb2.webp" alt="Thumbnail 2">
-          <img src="img/thumb3.webp" alt="Thumbnail 3">
+          <img src="img/thumb1.webp" alt="Baobab Avenue at sunset">
+          <img src="img/thumb2.webp" alt="Nosy Be beach">
+          <img src="img/thumb3.webp" alt="Lemur in rainforest">
         </div>
       </article>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="current-year"></span> — Place page example.</p>
+    <p>&copy; <span id="current-year"></span> — Madagascar Travel Page</p>
     <p>Last modified: <span id="last-modified"></span></p>
   </footer>
 </body>
