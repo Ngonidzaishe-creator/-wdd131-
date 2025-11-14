@@ -47,9 +47,14 @@
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-heading">
       <picture>
+        <!-- small mobile -->
         <source media="(max-width:600px)" srcset="images/hero-small.webp" type="image/webp">
-        <source media="(min-width:601px)" srcset="images/hero-large.webp" type="image/webp">
-        <img src="images/hero-large.webp.jpg" alt="Baobab trees along Madagascar coast" class="hero-img" loading="lazy">
+        <!-- medium/tablet -->
+        <source media="(min-width:601px) and (max-width:1199px)" srcset="images/hero-med.webp" type="image/webp">
+        <!-- large/desktop -->
+        <source media="(min-width:1200px)" srcset="images/hero-large.webp" type="image/webp">
+        <!-- fallback (jpg/png) -->
+        <img src="images/hero-large.jpg" alt="Baobab trees along Madagascar coast" class="hero-img" loading="lazy">
       </picture>
 
       <div class="hero-inner">
@@ -76,9 +81,10 @@
       </div>
 
       <aside class="weather card" aria-labelledby="weather-heading">
-        <h4 id="weather-heading">Current (demo) Weather</h4>
+        <!-- weather-heading will show an emoticon via CSS pseudo-element on wide screens -->
+        <h4 id="weather-heading" class="weather-heading">Weather</h4>
 
-        <div class="weather-row">
+        <dl class="weather-row" aria-live="polite">
           <div>
             <dt>Temperature</dt>
             <dd id="temp">-- °C</dd>
@@ -91,7 +97,7 @@
             <dt>Wind Chill</dt>
             <dd id="wind-chill">--</dd>
           </div>
-        </div>
+        </dl>
 
         <p class="small muted">Values are static demo values (replace with API data if required).</p>
       </aside>
@@ -132,19 +138,19 @@
 
       <div class="species-grid">
         <article class="species">
-          <img src="images/download (3).jpg" alt="Ring-tailed lemur" loading="lazy">
+          <img src="images/ring-tailed.jpg" alt="Ring-tailed lemur" loading="lazy">
           <h4>Ring-tailed lemur</h4>
           <p>Iconic species with a long, banded tail found in southern and southwestern Madagascar.</p>
         </article>
 
         <article class="species">
-          <img src="images/images (2).jpg" alt="Aye-aye" loading="lazy">
+          <img src="images/aye-aye.jpg" alt="Aye-aye" loading="lazy">
           <h4>Aye-aye</h4>
           <p>Nocturnal lemur with long middle finger used for extracting grubs from wood.</p>
         </article>
 
         <article class="species">
-          <img src="images/download.jpg" alt="Baobab tree" loading="lazy">
+          <img src="images/baobab.jpg" alt="Baobab tree" loading="lazy">
           <h4>Baobab</h4>
           <p>Ancient and massive trees, especially famous along Baobab Avenue near Morondava.</p>
         </article>
@@ -165,7 +171,6 @@
     <!-- MAP (placeholder) -->
     <section class="card map-card" aria-labelledby="map-heading">
       <h3 id="map-heading">Map</h3>
-      <!-- Replace src with actual embed or interactive map -->
       <div class="map-placeholder" role="img" aria-label="Map placeholder for Madagascar">
         <p>Map placeholder — embed Google Maps iframe or other map here.</p>
       </div>
@@ -178,22 +183,22 @@
 
       <div class="thumbs">
         <button class="thumb" data-full="images/gallery1.webp" aria-label="Open image 1">
-          <img src="images/download (2).jpg" alt="Baobab avenue at sunset" loading="lazy">
+          <img src="images/thumb1.jpg" alt="Baobab avenue at sunset" loading="lazy">
         </button>
         <button class="thumb" data-full="images/gallery2.webp" aria-label="Open image 2">
-          <img src="images/images (3).jpg" alt="Nosy Be beach" loading="lazy">
+          <img src="images/thumb2.jpg" alt="Nosy Be beach" loading="lazy">
         </button>
-        <button class="thumb" data-full="images/gallery1.webp" aria-label="Open image 3">
-          <img src="images/thumb1.webp.jpg" alt="Lemur in rainforest" loading="lazy">
+        <button class="thumb" data-full="images/gallery3.webp" aria-label="Open image 3">
+          <img src="images/thumb3.jpg" alt="Lemur in rainforest" loading="lazy">
         </button>
-        <button class="thumb" data-full="images/gallery2.webp" aria-label="Open image 4">
-          <img src="images/madagascar_0.jpg" alt="Coastal cliffs" loading="lazy">
+        <button class="thumb" data-full="images/gallery4.webp" aria-label="Open image 4">
+          <img src="images/thumb4.jpg" alt="Coastal cliffs" loading="lazy">
         </button>
-        <button class="thumb" data-full="images/gallery1.webp" aria-label="Open image 5">
-          <img src="images/download.jpg" alt="Local market" loading="lazy">
+        <button class="thumb" data-full="images/gallery5.webp" aria-label="Open image 5">
+          <img src="images/thumb5.jpg" alt="Local market" loading="lazy">
         </button>
-        <button class="thumb" data-full="images/gallery2.webp" aria-label="Open image 6">
-          <img src="images/images (4).jpg" alt="Traditional dance" loading="lazy">
+        <button class="thumb" data-full="images/gallery6.webp" aria-label="Open image 6">
+          <img src="images/thumb6.jpg" alt="Traditional dance" loading="lazy">
         </button>
       </div>
     </section>
@@ -236,7 +241,7 @@
     <div>
       <p>&copy; <span id="current-year"></span> Madagascar Travel Page</p>
       <p>Last modified: <span id="last-modified"></span></p>
-       <p>Last modified by: <span id="Ngonidzaishe-chareka"></span></p>
+      <p>Last modified by: <span id="last-modified-by">Ngonidzaishe Chareka</span></p>
     </div>
   </footer>
 </body>

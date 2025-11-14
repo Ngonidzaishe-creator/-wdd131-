@@ -1,81 +1,52 @@
-/* ---------- Interactivity: dark mode, modal gallery, wind chill, nav ---------- */
-
-const STATIC_TEMP_C = 8;
-const STATIC_WIND_KMH = 20;
-
-function calculateWindChill(tempC, windKmh) {
-  return 13.12 + 0.6215 * tempC - 11.37 * Math.pow(windKmh, 0.16) + 0.3965 * tempC * Math.pow(windKmh, 0.16);
-}
-function formatWC(value) {
-  return `${Math.round(value * 10) / 10} °C`;
-}
+// scripts.js
+// Vanilla JS: windchill, toggles, gallery modal, footer metadata
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Footer info
-  document.getElementById('current-year').textContent = new Date().getFullYear();
-  document.getElementById('last-modified').textContent = document.lastModified || '—';
-
-  // Weather demo values
-  document.getElementById('temp').textContent = `${STATIC_TEMP_C} °C`;
-  document.getElementById('wind').textContent = `${STATIC_WIND_KMH} km/h`;
-
-  const wcElem = document.getElementById('wind-chill');
-  if (STATIC_TEMP_C <= 10 && STATIC_WIND_KMH > 4.8) {
-    wcElem.textContent = formatWC(calculateWindChill(STATIC_TEMP_C, STATIC_WIND_KMH));
-  } else {
-    wcElem.textContent = 'N/A';
-  }
-
-  // Dark mode - use localStorage to remember
+  // Theme toggle: persist in localStorage
+  const themeToggle = document.getElementById('dark-toggle');
   const root = document.documentElement;
-  const darkToggle = document.getElementById('dark-toggle');
-  const current = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  if (current === 'dark') root.setAttribute('data-theme', 'dark');
-
-  darkToggle.addEventListener('click', () => {
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') root.setAttribute('data-theme', 'dark');
+  themeToggle.addEventListener('click', () => {
     const isDark = root.getAttribute('data-theme') === 'dark';
     if (isDark) {
       root.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-      darkToggle.setAttribute('aria-pressed', 'false');
-      darkToggle.textContent = '🌙';
+      themeToggle.setAttribute('aria-pressed', 'false');
+      localStorage.setItem('site-theme', 'light');
     } else {
       root.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-      darkToggle.setAttribute('aria-pressed', 'true');
-      darkToggle.textContent = '☀️';
+      themeToggle.setAttribute('aria-pressed', 'true');
+      localStorage.setItem('site-theme', 'dark');
     }
   });
 
   // Mobile nav toggle
   const navToggle = document.getElementById('nav-toggle');
-  const nav = document.getElementById('main-nav');
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
-    });
-  }
+  const mainNav = document.getElementById('main-nav');
+  navToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
 
-  // Gallery modal
+  // Gallery modal (simple)
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modal-img');
   const modalClose = document.getElementById('modal-close');
 
   document.querySelectorAll('.thumb').forEach(btn => {
     btn.addEventListener('click', () => {
-      const src = btn.getAttribute('data-full');
-      modalImg.src = src;
+      const full = btn.dataset.full;
+      modalImg.src = full;
       modalImg.alt = btn.querySelector('img').alt || '';
       modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+      modal.style.display = 'flex';
+      modalClose.focus();
     });
   });
 
   function closeModal() {
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    modal.style.display = 'none';
     modalImg.src = '';
   }
 
@@ -83,25 +54,41 @@ document.addEventListener('DOMContentLoaded', () => {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
-  document.addEventListener('keyup', (e) => {
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
   });
 
-  // Smooth scroll for nav links
-  document.querySelectorAll('.top-nav a').forEach(a => {
-    a.addEventListener('click', (evt) => {
-      const href = a.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        evt.preventDefault();
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // close mobile nav if open
-        if (nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-  });
+  // Footer metadata
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+  // lastModified from DOM (document.lastModified)
+  document.getElementById('last-modified').textContent = document.lastModified || 'Unknown';
 
+  // Windchill: static demo values (change these values if you update markup)
+  // These should match the values shown in the weather card
+  const tempEl = document.getElementById('temp');
+  const windEl = document.getElementById('wind');
+  const windChillEl = document.getElementById('wind-chill');
+
+  // static demo inputs (Celsius and km/h)
+  const T = 10;     // degrees Celsius (static demo)
+  const V = 20;     // km/h (static demo)
+
+  tempEl.textContent = `${T} °C`;
+  windEl.textContent = `${V} km/h`;
+
+  // calculateWindChill must be one line returning the formula (Celsius version)
+  // Formula: 13.12 + 0.6215*T - 11.37*(V*0.16) + 0.3965*T(V**0.16)
+  function calculateWindChill(tempC, windKmh) {
+    return 13.12 + 0.6215 * tempC - 11.37 * Math.pow(windKmh, 0.16) + 0.3965 * tempC * Math.pow(windKmh, 0.16);
+  }
+
+  // Viable Wind Chill check (metric):
+  // Temperature <= 10 °C and Wind speed > 4.8 km/h
+  if (T <= 10 && V > 4.8) {
+    const wc = calculateWindChill(T, V);
+    // round reasonably to 1 decimal
+    windChillEl.textContent = `${Math.round(wc * 10) / 10} °C`;
+  } else {
+    windChillEl.textContent = 'N/A';
+  }
 });
