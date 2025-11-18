@@ -63,7 +63,7 @@ const temples = [
     dedicated: "2027, April, 13",
     area: 17000,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/harare-zimbabwe-temple/harare-zimbabwe-temple-480.jpg"
+      "https://www.bing.com/ck/a?!&&p=e99492aee92fc3284d1a7393b5e42d947f33b563ac26a383470ce361d89296fbJmltdHM9MTc2MzQyNDAwMA&ptn=3&ver=2&hsh=4&fclid=0bccb9a5-6c8d-613c-35dc-ac106d1b6047&u=a1L2ltYWdlcy9zZWFyY2g_cT10ZW1wbGVzK3BpY3R1cmVzK21leGljbytjaXR5K21leGljbyslMjIlMmMrbGRzJmlkPTEyODFFRDg1MjE1MzQ2NkE5MzI5QUVGRUUzNzQ2RTc4QTA3NTk5MkUmRk9STT1JQUNGSVI&ntb=1"
   },
   {
     templeName: "Rome Italy",
