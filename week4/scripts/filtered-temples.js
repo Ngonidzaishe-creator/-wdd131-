@@ -56,7 +56,7 @@ const temples = [
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
 
-  // EXTRA TEMPLES
+  // EXTRA ADDED BY STUDENT
   {
     templeName: "Harare Zimbabwe",
     location: "Harare, Zimbabwe",
@@ -80,12 +80,90 @@ const temples = [
     area: 382207,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-480.jpg"
+  },
+  {
+    templeName: "Accra Ghana",
+    location: "Accra, Ghana",
+    dedicated: "2004, January, 11",
+    area: 17500,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-480.jpg"
+  },
+  {
+    templeName: "Johannesburg South Africa",
+    location: "Johannesburg, South Africa",
+    dedicated: "1985, August, 24",
+    area: 19184,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/johannesburg-south-africa-temple/johannesburg-south-africa-temple-480.jpg"
+  },
+  {
+    templeName: "Nairobi Kenya",
+    location: "Nairobi, Kenya",
+    dedicated: "2027, June, 20",
+    area: 38000,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/nairobi-kenya-temple/nairobi-kenya-temple-480.jpg"
+  },
+  {
+    templeName: "Paris France",
+    location: "Paris, France",
+    dedicated: "2017, May, 21",
+    area: 44175,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-480.jpg"
+  },
+  {
+    templeName: "Sydney Australia",
+    location: "Sydney, Australia",
+    dedicated: "1984, September, 20",
+    area: 30577,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/sydney-australia-temple/sydney-australia-temple-480.jpg"
+  },
+  {
+    templeName: "Tokyo Japan",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October, 27",
+    area: 53952,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-480.jpg"
+  },
+  {
+    templeName: "Seoul Korea",
+    location: "Seoul, South Korea",
+    dedicated: "1985, December, 14",
+    area: 28057,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/seoul-korea-temple/seoul-korea-temple-480.jpg"
+  },
+  {
+    templeName: "São Paulo Brazil",
+    location: "São Paulo, Brazil",
+    dedicated: "1978, October, 30",
+    area: 59246,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/sao-paulo-brazil-temple/sao-paulo-brazil-temple-480.jpg"
+  },
+  {
+    templeName: "Hong Kong China",
+    location: "Hong Kong, China",
+    dedicated: "1996, May, 26",
+    area: 51921,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/hong-kong-china-temple/hong-kong-china-temple-480.jpg"
+  },
+  {
+    templeName: "Berlin Germany",
+    location: "Berlin, Germany",
+    dedicated: "1985, April, 30",
+    area: 45600,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/berlin-germany-temple/berlin-germany-temple-480.jpg"
   }
 ];
 
-
-// ==== FUNCTION TO DISPLAY TEMPLES ====
-
+// ==== DISPLAY FUNCTION ====
 function displayTemples(list) {
   const container = document.getElementById("temple-container");
   container.innerHTML = "";
@@ -98,34 +176,47 @@ function displayTemples(list) {
       <h2>${temple.templeName}</h2>
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-      <p><strong>Area:</strong> ${temple.area} sq ft</p>
-      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+      <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
     `;
 
     container.appendChild(card);
   });
 }
 
-// ==== FILTER BUTTONS ====
+
+// ==== BUTTON FILTERS ====
 
 document.getElementById("home").addEventListener("click", () => displayTemples(temples));
+
 document.getElementById("old").addEventListener("click", () => {
-  displayTemples(temples.filter(t => parseInt(t.dedicated.split(",")[0]) < 1900));
-});
-document.getElementById("new").addEventListener("click", () => {
-  displayTemples(temples.filter(t => parseInt(t.dedicated.split(",")[0]) > 2000));
-});
-document.getElementById("large").addEventListener("click", () => {
-  displayTemples(temples.filter(t => t.area > 90000));
-});
-document.getElementById("small").addEventListener("click", () => {
-  displayTemples(temples.filter(t => t.area < 10000));
+  displayTemples(
+    temples.filter(t => parseInt(t.dedicated.split(",")[0]) < 1900)
+  );
 });
 
-// Load all temples at start
+document.getElementById("new").addEventListener("click", () => {
+  displayTemples(
+    temples.filter(t => parseInt(t.dedicated.split(",")[0]) > 2000)
+  );
+});
+
+document.getElementById("large").addEventListener("click", () => {
+  displayTemples(
+    temples.filter(t => t.area > 90000)
+  );
+});
+
+document.getElementById("small").addEventListener("click", () => {
+  displayTemples(
+    temples.filter(t => t.area < 10000)
+  );
+});
+
+// Load all temples on page load
 displayTemples(temples);
 
-// ==== FOOTER ====
 
+// ==== FOOTER ====
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("last-modified").textContent = document.lastModified;
