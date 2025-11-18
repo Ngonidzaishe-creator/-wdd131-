@@ -1,4 +1,4 @@
-const temples = [
+const temples = [ 
   {
     templeName: "Aba Nigeria",
     location: "Aba, Nigeria",
@@ -56,14 +56,15 @@ const temples = [
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
 
-  // EXTRA ADDED BY STUDENT
+  // ==== STUDENT ADDED TEMPLES ====
+
   {
     templeName: "Harare Zimbabwe",
     location: "Harare, Zimbabwe",
     dedicated: "2027, April, 13",
     area: 17000,
     imageUrl:
-      "https://www.bing.com/ck/a?!&&p=e99492aee92fc3284d1a7393b5e42d947f33b563ac26a383470ce361d89296fbJmltdHM9MTc2MzQyNDAwMA&ptn=3&ver=2&hsh=4&fclid=0bccb9a5-6c8d-613c-35dc-ac106d1b6047&u=a1L2ltYWdlcy9zZWFyY2g_cT10ZW1wbGVzK3BpY3R1cmVzK21leGljbytjaXR5K21leGljbyslMjIlMmMrbGRzJmlkPTEyODFFRDg1MjE1MzQ2NkE5MzI5QUVGRUUzNzQ2RTc4QTA3NTk5MkUmRk9STT1JQUNGSVI&ntb=1"
+       "https://content.churchofjesuschristtemples.org/assets/img/temples/harare-zimbabwe-temple/harare-zimbabwe-temple-63136.jpg"
   },
   {
     templeName: "Rome Italy",
@@ -184,7 +185,6 @@ function displayTemples(list) {
   });
 }
 
-
 // ==== BUTTON FILTERS ====
 
 document.getElementById("home").addEventListener("click", () => displayTemples(temples));
@@ -213,9 +213,8 @@ document.getElementById("small").addEventListener("click", () => {
   );
 });
 
-// Load all temples on page load
+// Load on page start
 displayTemples(temples);
-
 
 // ==== FOOTER ====
 document.getElementById("year").textContent = new Date().getFullYear();
